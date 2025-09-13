@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>룰렛 확률표</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: transparent;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .probability-container {
+            background: transparent;
+            border-radius: 0;
+            padding: 0;
+            box-shadow: none;
+            backdrop-filter: none;
+            border: none;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #ffd700;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        .roulette-section {
+            margin-bottom: 15px;
+        }
+
+        .roulette-title {
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            padding: 5px 8px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 6px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(102, 126, 234, 0.3);
+        }
+
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 4px;
+        }
+
+        .item-card {
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            padding: 4px 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: none;
+            backdrop-filter: none;
+        }
+
+        .item-card:hover {
+            background: transparent;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .item-name {
+            font-size: 9px;
+            font-weight: 500;
+            color: white;
+            flex: 1;
+            line-height: 1.2;
+        }
+
+        .item-weight {
+            font-size: 10px;
+            font-weight: bold;
+            color: #ffd700;
+            background: transparent;
+            padding: 2px 4px;
+            border-radius: 0;
+            min-width: 25px;
+            text-align: center;
+        }
+
+
+        /* 김타임 룰렛 특별 스타일 */
+        .kim-time .roulette-title {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+        }
+
+        /* 김화련 룰렛 특별 스타일 */
+        .kim-hwa .roulette-title {
+            background: linear-gradient(135deg, #2ed573 0%, #17a2b8 100%);
+        }
+
+        /* 주루마블 룰렛 특별 스타일 */
+        .juru-roulette .roulette-title {
+            background: linear-gradient(135deg, #5f27cd 0%, #341f97 100%);
+        }
+
+
+        /* 반응형 - 모든 화면에서 4개씩 유지 */
+        @media (max-width: 600px) {
+            .probability-container {
+                padding: 0;
+                max-width: 400px;
+            }
+            
+            .title {
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+            
+            .roulette-title {
+                font-size: 10px;
+                padding: 4px 6px;
+            }
+            
+            .item-card {
+                padding: 3px 4px;
+            }
+            
+            .item-name {
+                font-size: 8px;
+            }
+            
+            .item-weight {
+                font-size: 9px;
+                padding: 1px 3px;
+                min-width: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="probability-container">
+        <div class="title">🎰 룰렛 확률표</div>
+        
+        <!-- 김타임 룰렛 -->
+        <div class="roulette-section kim-time">
+            <div class="roulette-title">김타임 룰렛</div>
+            <div class="items-grid">
+                <div class="item-card">
+                    <span class="item-name">냥냥</span>
+                    <span class="item-weight">10%</span>
+                </div>
+                <div class="item-card">
+                    <span class="item-name">볼빵빵</span>
+                    <span class="item-weight">10%</span>
+                </div>
+                <div class="item-card">
+                    <span class="item-name">뽀뽀</span>
+                    <span class="item-weight">10%</span>
+                </div>
+                <div class="item-card">
+                    <span class="item-name">룰렛한번더</span>
+                    <span class="item-weight">20%</span>
+                </div>
+                <div class="item-card">
+                    <span class="item-name">얼빡</span>
+                    <span class="item-weight">10%</span>
+                </div>
+                <div class="item-card">
+                    <span class="item-name">이거그려줘</span>
+                    <span class="item-weight">5%</span>
+                </div>
+                <div class="item-card">
+                    <span class="item-name">원하는게임</span>
+                    <span class="item-weight">5%</span>
+                </div>
+                <div class="item-card">
+                    <span class="item-name">좋아해</span>
+                    <span class="item-weight">10%</span>
+                </div>
+                <div class="item-card">
+                    <span class="item-name">일일 원하는 호칭</span>
+                    <span class="item-weight">5%</span>
+                </div>
+                <div class="item-card">
+                    <span class="item-name">시키고 싶은 대사</span>
+                    <span class="item-weight">5%</span>
+                </div>
+                <div class="item-card">
+                    <span class="item-name">노래</span>
+                    <span class="item-weight">5%</span>
+                </div>
+                <div class="item-card">
+                    <span class="item-name">4컷방셀</span>
+                    <span class="item-weight">3%</span>
+                </div>
+                <div class="item-card">
+                    <span class="item-name">Q&A 5문 5답</span>
+                    <span class="item-weight">2%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 김화련 룰렛 -->
+        <div class="roulette-section kim-hwa">
+            <div class="roulette-title">김화련 룰렛</div>
+            <div class="items-grid">
+                <div class="item-card">
+                    <span class="item-name">볼빵빵</span>
+                    <span class="item-weight">25%</span>
+                </div>
+                <div class="item-card">
+                    <span class="item-name">메롱</span>
+                    <span class="item-weight">25%</span>
+                </div>
+                <div class="item-card">
+                    <span class="item-name">손하트</span>
+                    <span class="item-weight">20%</span>
+                </div>
+                <div class="item-card">
+                    <span class="item-name">뽀뽀+1 적립</span>
+                    <span class="item-weight">10%</span>
+                </div>
+                <div class="item-card">
+                    <span class="item-name">짧애교</span>
+                    <span class="item-weight">5%</span>
+                </div>
+                <div class="item-card">
+                    <span class="item-name">뽀뽀(적립 있으면 청산)</span>
+                    <span class="item-weight">5%</span>
+                </div>
+                <div class="item-card">
+                    <span class="item-name">좋아해</span>
+                    <span class="item-weight">8%</span>
+                </div>
+                <div class="item-card">
+                    <span class="item-name">냥냥체</span>
+                    <span class="item-weight">2%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 주루마블 룰렛 -->
+        <div class="roulette-section juru-roulette">
+            <div class="roulette-title">주루마블 룰렛</div>
+            <div class="items-grid">
+                <div class="item-card">
+                    <span class="item-name">볼빵빵</span>
+                    <span class="item-weight">25%</span>
+                </div>
+                <div class="item-card">
+                    <span class="item-name">메롱</span>
+                    <span class="item-weight">25%</span>
+                </div>
+                <div class="item-card">
+                    <span class="item-name">손하트</span>
+                    <span class="item-weight">20%</span>
+                </div>
+                <div class="item-card">
+                    <span class="item-name">뽀뽀+1 적립</span>
+                    <span class="item-weight">10%</span>
+                </div>
+                <div class="item-card">
+                    <span class="item-name">짧애교</span>
+                    <span class="item-weight">5%</span>
+                </div>
+                <div class="item-card">
+                    <span class="item-name">뽀뽀(적립 있으면 청산)</span>
+                    <span class="item-weight">5%</span>
+                </div>
+                <div class="item-card">
+                    <span class="item-name">좋아해</span>
+                    <span class="item-weight">8%</span>
+                </div>
+                <div class="item-card">
+                    <span class="item-name">냥냥체</span>
+                    <span class="item-weight">2%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
